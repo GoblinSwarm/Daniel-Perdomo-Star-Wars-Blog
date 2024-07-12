@@ -44,7 +44,6 @@ export const Home = () => {
 										<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOU1Z2x-YVbmqhk1jiiiy55zDEpi91Y0eYg&s" className="card-img-top" alt="Planet" />
 										<div className="card-body">
 											<h5 className="card-title">Name: {planet.result.properties.name}</h5>
-											<p className="card-text">Terrain: {planet.result.properties.terrain}</p>
 											<p className="card-text">Climate: {planet.result.properties.climate}</p>
 											<p className="card-text">Gravity: {planet.result.properties.gravity}</p>
 											<div className="buttons">
@@ -71,7 +70,6 @@ export const Home = () => {
 											<h5 className="card-title">Name: {vehicle.result.properties.name}</h5>
 											<p className="card-text">Model: {vehicle.result.properties.model}</p>
 											<p className="card-text">Class: {vehicle.result.properties.vehicle_class}</p>
-											<p className="card-text">Crew: {vehicle.result.properties.crew}</p>
 											<div className="buttons">
 												<a href="#" className="btn btn-primary">Learn More!</a>
 												<a href="#" className="btn btn-primary"><i className="far fa-heart"></i></a>
