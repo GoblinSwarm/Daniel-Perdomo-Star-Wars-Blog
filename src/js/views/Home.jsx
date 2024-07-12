@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
@@ -23,7 +24,11 @@ export const Home = () => {
 											<p className="card-text">Hair-color: {person.result.properties.hair_color}</p>
 											<p className="card-text">Eye-color: {person.result.properties.eye_color}</p>
 											<div className="buttons">
-												<a href="#" className="btn btn-primary">Learn More!</a>
+												<NavLink
+													to={`/characterdetail/${person.result.uid}`}
+													className="btn btn-primary">
+													Learn More!
+												</NavLink>
 												<a href="#" className="btn btn-primary"><i className="far fa-heart"></i></a>
 											</div>
 										</div>
