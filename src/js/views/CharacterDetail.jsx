@@ -2,25 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-// "properties": {
-//     "height": "172",
-//     "mass": "77",
-//     "hair_color": "blond",
-//     "skin_color": "fair",
-//     "eye_color": "blue",
-//     "birth_year": "19BBY",
-//     "gender": "male",
-//     "created": "2024-07-12T02:23:35.057Z",
-//     "edited": "2024-07-12T02:23:35.057Z",
-//     "name": "Luke Skywalker",
-//     "homeworld": "https://www.swapi.tech/api/planets/1",
-//     "url": "https://www.swapi.tech/api/people/1"
-// },
-// "description": "A person within the Star Wars universe",
-// "_id": "5f63a36eee9fd7000499be42",
-// "uid": "1",
-// "__v": 0
-
 const initialState = {
     properties: {
         height: "",

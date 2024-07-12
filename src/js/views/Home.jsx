@@ -52,7 +52,11 @@ export const Home = () => {
 											<p className="card-text">Climate: {planet.result.properties.climate}</p>
 											<p className="card-text">Gravity: {planet.result.properties.gravity}</p>
 											<div className="buttons">
-												<a href="#" className="btn btn-primary">Learn More!</a>
+												<NavLink
+													to={`/planetdetail/${planet.result.uid}`}
+													className="btn btn-primary">
+													Learn More!
+												</NavLink>
 												<a href="#" className="btn btn-primary"><i className="far fa-heart"></i></a>
 											</div>
 										</div>
@@ -75,7 +79,11 @@ export const Home = () => {
 											<h5 className="card-title">Name: {vehicle.result.properties.name}</h5>
 											<p className="card-text">Class: {vehicle.result.properties.vehicle_class}</p>
 											<div className="buttons">
-												<a href="#" className="btn btn-primary">Learn More!</a>
+												<NavLink
+													to={`/vehicledetail/${vehicle.result.uid}`}
+													className="btn btn-primary">
+													Learn More!
+												</NavLink>
 												<a href="#" className="btn btn-primary"><i className="far fa-heart"></i></a>
 											</div>
 										</div>
