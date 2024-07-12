@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { Context } from "../store/appContext";
+import { Context, useNavigate } from "../store/appContext";
 
 import "../../styles/home.css";
 
@@ -11,7 +11,11 @@ export const Home = () => {
 	const { vehicles } = store;
 	const { planets } = store;
 
+	// const handleDetail = (id) => {
+    //     navigate(`/editcontact/${id}`)
+    // }
 
+	
 	return (
 		<div className="container text-start">
 			<div className="row">
