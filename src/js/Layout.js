@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Home } from "./views/Home.jsx";
-import { Detail } from "./views/Detail.jsx";
+import { Detail } from "./views/CharacterDetail.jsx";
 import { NotFound } from "./views/NotFound.jsx"
 import injectContext from "./store/appContext.js";
 
