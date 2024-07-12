@@ -68,7 +68,6 @@ export const Home = () => {
 										<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOU1Z2x-YVbmqhk1jiiiy55zDEpi91Y0eYg&s" className="card-img-top" alt="Vehicle" />
 										<div className="card-body">
 											<h5 className="card-title">Name: {vehicle.result.properties.name}</h5>
-											<p className="card-text">Model: {vehicle.result.properties.model}</p>
 											<p className="card-text">Class: {vehicle.result.properties.vehicle_class}</p>
 											<div className="buttons">
 												<a href="#" className="btn btn-primary">Learn More!</a>
