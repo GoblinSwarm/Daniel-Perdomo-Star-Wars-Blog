@@ -13,7 +13,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let data = await response.json()
 
 					if(response.ok){
-						setStore({people: data.people})
+						// Esta guardando bien con esto ya
+						setStore({people: data.people.results})
 					} else {
 						console.log(`Respuesta de la funcion getAllPeople: ${data}, ${response}`)
 					}
@@ -22,6 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.log("Error trying to bring back the info: ", error)
 				}
 			},
+
 			getAllVehicles: async () => {
 				try {
 					let response = await fetch(`${getStore().urlBase}/vehicles`)

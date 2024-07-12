@@ -22,7 +22,7 @@ export const Home = () => {
 				<div className="col-10 align-self-center">
 					<h2>Characters</h2>
 					{people.map((people, index) => (
-					<div className="text-center mt-5 key={index}">
+					<div className="text-center mt-5" key={index}>
 						<div className="card" style={{width: "18rem"}}>
 	  						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOU1Z2x-YVbmqhk1jiiiy55zDEpi91Y0eYg&s" className="card-img-top" />
   							<div className="card-body">
@@ -37,7 +37,7 @@ export const Home = () => {
   							</div>
 						</div>
 					</div>
-					)}
+					))}
 					<div>
 						<br />
 						<h2>Planets</h2>
