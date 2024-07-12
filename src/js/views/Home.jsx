@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { Context, useNavigate } from "../store/appContext";
+import { Context } from "../store/appContext";
 
 import "../../styles/home.css";
 
@@ -10,11 +10,6 @@ export const Home = () => {
     const { people } = store;
 	const { vehicles } = store;
 	const { planets } = store;
-
-	// const handleDetail = (id, type) => {
-    //     navigate(`/${type}/${id}`)
-    // }
-
 
 	return (
 		<div className="container text-start">

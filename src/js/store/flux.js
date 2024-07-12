@@ -7,14 +7,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: []
 		},
 		actions: {
+			getObjectbyID: async (dataUrl) => {
+				try {
+					let response = await fetch(`${dataUrl}`)
+					let data = await response.json()
+
+				if(response.ok){
+					return data; 
+				} else {
+					console.log(`Something bad happened at loolapalloza and ${data}`)
+				} 
+				} catch(error) {
+					console.log(error);
+				}
+			},
 			getAllPeople: async () => {
 				try {
 					let response = await fetch(`${getStore().urlBase}/people`)
 					let data = await response.json()
-
-					if(response.ok){
+					let peopleInPage = []
 						// Esta guardando bien con esto ya
-						setStore({ people: data.results });
+					if (response.ok) {
+						let peopleInPage = await Promise.all(
+							data.results.map(async (item) => {
+								let dataUrl = item.url;
+								return await getActions().getObjectbyID(dataUrl);
+							})
+						);
+						setStore({ people: peopleInPage });
 					} else {
 						console.log(`Respuesta de la funcion getAllPeople: ${data}, ${response}`)
 					}
