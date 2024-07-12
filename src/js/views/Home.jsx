@@ -21,15 +21,15 @@ export const Home = () => {
 			<div className="row">
 				<div className="col-10 align-self-center">
 					<h2>Characters</h2>
-					{people.map((people, index) => (
+					{people.map((person, index) => (
 					<div className="text-center mt-5" key={index}>
 						<div className="card" style={{width: "18rem"}}>
 	  						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTOU1Z2x-YVbmqhk1jiiiy55zDEpi91Y0eYg&s" className="card-img-top" />
   							<div className="card-body">
-    							<h5 className="card-title">Name: {people.name}</h5>
-    							<p className="card-text">Gender: {people.gender}</p> 
-								<p className="card-text">Hair-color: {people.hair_color}</p>
-								<p className="card-text">Eye-color: {people.eye_color}</p> 
+    							<h5 className="card-title">Name: {person.name}</h5>
+    							<p className="card-text">Gender: {person.gender}</p> 
+								<p className="card-text">Hair-color: {person.hair_color}</p>
+								<p className="card-text">Eye-color: {person.eye_color}</p> 
 								<div className="buttons">
 	    							<a href="#" className="btn btn-primary">Learn More!</a>
 									<a href="#" className="btn btn-primary"><i className="far fa-heart"></i></a>

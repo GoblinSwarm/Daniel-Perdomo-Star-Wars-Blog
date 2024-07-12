@@ -14,7 +14,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					if(response.ok){
 						// Esta guardando bien con esto ya
-						setStore({people: data.people.results})
+						setStore({ people: data.results });
 					} else {
 						console.log(`Respuesta de la funcion getAllPeople: ${data}, ${response}`)
 					}
