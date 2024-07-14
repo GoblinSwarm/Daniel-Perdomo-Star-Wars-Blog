@@ -27,19 +27,19 @@ const initialState = {
 export const PlanetDetail = () => {
     const { store } = useContext(Context);
     const { planets } = store;
-    const { uid } = useParams();
+    const { _id } = useParams();
     const [planet, setPlanet] = useState(initialState);
 
     useEffect(() => {
         // Buscar el personaje por uid
         const fetchPlanet = async () => {
-            const foundPlanet = planets.find(newPlanet => newPlanet.result.uid === uid);
+            const foundPlanet = planets.find(newPlanet => newPlanet.result._id === _id);
             if (foundPlanet) {
                 setPlanet(foundPlanet.result);
             }
         }
         fetchPlanet();
-    }, [uid, planets]);
+    }, [_id, planets]);
 
     return (
         <>

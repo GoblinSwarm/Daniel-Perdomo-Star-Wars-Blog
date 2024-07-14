@@ -27,19 +27,19 @@ const initialState = {
 export const CharacterDetail = () => {
     const { store } = useContext(Context);
     const { people } = store;
-    const { uid } = useParams();
+    const { _id } = useParams();
     const [character, setCharacter] = useState(initialState);
 
     useEffect(() => {
         // Buscar el personaje por uid
         const fetchPerson = async () => {
-            const foundPerson = people.find(newPerson => newPerson.result.uid === uid);
+            const foundPerson = people.find(newPerson => newPerson.result._id === _id);
             if (foundPerson) {
                 setCharacter(foundPerson.result);
             }
         }
         fetchPerson();
-    }, [uid, people]);
+    }, [_id, people]);
 
     return (
         <>

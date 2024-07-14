@@ -27,19 +27,19 @@ const initialState = {
 export const VehicleDetail = () => {
     const { store } = useContext(Context);
     const { vehicles } = store;
-    const { uid } = useParams();
+    const { _id } = useParams();
     const [vehicle, setVehicle] = useState(initialState);
 
     useEffect(() => {
 
         const fetchVehicle = async () => {
-            const foundVehicle = vehicles.find(newVehicle => newVehicle.result.uid === uid);
+            const foundVehicle = vehicles.find(newVehicle => newVehicle.result._id === _id);
             if (foundVehicle) {
                 setVehicle(foundVehicle.result);
             }
         }
         fetchVehicle();
-    }, [uid, vehicles]);
+    }, [_id, vehicles]);
 
     return (
         <>

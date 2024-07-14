@@ -7,7 +7,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			vehicle: [],
 			vehicles: [],
 			planet: [],
-			planets: []
+			planets: [],
+			favorites: []
 		},
 		actions: {
 			getObjectbyID: async (dataUrl) => {
@@ -89,7 +90,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				} catch (error) {
 					console.log("Error trying to bring back the info: ", error)
 				}
-			}
+			},
+			modFavorites: (fav) => {
+				let store = getStore();
+				let exists = store.favorites.some((item) => item._id == fav._id)
+
+				if (exists) {
+
+				} else {
+					console.log("No existe pero bue")
+				}
+			},
 		}
 	};
 };
