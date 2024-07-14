@@ -1,11 +1,25 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context)
+	const navigate = useNavigate();
 
+	const handleOnClick = (item) => {
+		console.log(item)
+		//Aca se debe hacer un switch para navegar dependiendo de lo que halla como item
+		if (item.result.properties.url.includes("people"))
+			navigate(`/characterdetail/${item.result._id}`)
+
+		if (item.result.properties.url.includes("vehicle"))
+			navigate(`/vehicledetail/${item.result._id}`)
+
+		if (item.result.properties.url.includes("planet"))
+			navigate(`/planetdetail/${item.result._id}`)
+
+	}
 
 	return (
 		<div className="container text-center">
@@ -33,7 +47,7 @@ export const Navbar = () => {
 								store.favorites.map((item, index) => {
 									return (
 										< li key={index} className="d-flex px-2" >
-											<a className="dropdown-item" href="#">{item.result.properties.name}</a>
+											<a className="dropdown-item" onClick={() => handleOnClick(item)}>{item.result.properties.name}</a>
 											<span onClick={() => actions.modFavorites(item)}><i className="far fa-trash-alt"></i></span>
 										</li>
 									)
