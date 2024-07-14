@@ -92,21 +92,22 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 			},
 			modFavorites: (fav) => {
-				let store = getStore();
-				let exists = store.favorites.some((item) => item._id == fav._id)
 
-				if (!exists) {
+				let store = getStore();
+				let exists = store.favorites.some((item) => item.result._id == fav.result._id)
+
+				if (exists) {
+					let newFav = store.favorites.filter((item) => item.result._id != fav.result._id)
+					setStore({
+						favorites: newFav
+					})
+
+				} else {
 					setStore({
 						favorites: [...store.favorites, fav]
 					})
 
-				} else {
-					let newFav = store.favorites.filter((item) => item._id != fav._id)
-					setStore({
-						favorites: newFav
-					})
 				}
-				console.log(store.favorites)
 			},
 		}
 	};

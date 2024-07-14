@@ -31,8 +31,9 @@ export const Home = () => {
 												</NavLink>
 												<button
 													onClick={() => actions.modFavorites(person)}
-													className={store.favorites.includes(person) ? <i class="fas fa-heart"></i> : ""}
-												><i className="far fa-heart"></i></button>
+													className="btn btn-primary {store.favorites.includes(person)}">
+													<i className="fas fa-heart"></i>
+												</button>
 											</div>
 										</div>
 									</div>
