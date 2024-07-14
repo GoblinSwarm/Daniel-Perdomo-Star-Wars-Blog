@@ -99,8 +99,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({
 						favorites: [...store.favorites, fav]
 					})
+
 				} else {
-					console.log("Existe pero bue")
 					let newFav = store.favorites.filter((item) => item._id != fav._id)
 					setStore({
 						favorites: newFav

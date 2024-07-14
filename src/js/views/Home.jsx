@@ -7,6 +7,8 @@ export const Home = () => {
 	const { store } = useContext(Context);
 	const { people, vehicles, planets } = store;
 
+	
+
 	return (
 		<div className="container text-start">
 			<div className="row">

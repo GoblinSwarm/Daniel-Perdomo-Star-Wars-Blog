@@ -1,25 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import { isHtmlElement } from "react-router-dom/dist/dom";
 
 export const Navbar = () => {
+	const { store } = useContext(Context)
+
 	return (
 		<div className="container text-center">
 			<nav className="navbar navbar-light bg-light mb-3">
 				<Link to="/">
 					<span className="navbar-brand mb-0 h1"><img src="https://1000logos.net/wp-content/uploads/2017/06/Star-Wars-Logo-1.png"
-					                        alt="Star Wars Logo"
-											style={{ height: "40px" }}
-											/>
+						alt="Star Wars Logo"
+						style={{ height: "40px" }}
+					/>
 					</span>
 				</Link>
 				<div className="ml-auto">
-					{/* Esto debe de ser un dropdown con la palabra 'favoritos' mas la cuenta de cuantos hay 
-					Tambien se debe de poder sacar favoritos dentro del dropdown, no esta facil la cosa*/}
+					<div className="btn-group">
+						<Link to="/">
+							<button className="btn btn-primary">Favorite: {store.favorites.length}</button>
+						</Link>
+						<button type="button" className="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+							<span className="visually-hidden">Toggle Dropdown</span>
+						</button>
 
-					<Link to="/">
-						<button className="btn btn-primary">Favorites</button>
-					</Link>
-
+						<ul className="dropdown-menu dropwdown-menu-end">
+							{
+								store.favorites.map((item) => {
+									return (
+										<li><a className="dropdown-item" href="#">{item.properties.name}</a>
+											<span><i className="far fa-trash-alt"></i></span>
+										</li>
+									)
+								})
+							}
+						</ul>
+					</div>
 				</div>
 			</nav>
 		</div>
