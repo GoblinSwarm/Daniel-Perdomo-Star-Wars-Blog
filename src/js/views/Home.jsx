@@ -25,7 +25,7 @@ export const Home = () => {
 											<p className="card-text">Eye-color: {person.result.properties.eye_color}</p>
 											<div className="buttons">
 												<NavLink
-													to={`/characterdetail/${person.result.uid}`}
+													to={`/characterdetail/${person.result._id}`}
 													className="btn btn-primary">
 													Learn More!
 												</NavLink>
@@ -53,7 +53,7 @@ export const Home = () => {
 											<p className="card-text">Gravity: {planet.result.properties.gravity}</p>
 											<div className="buttons">
 												<NavLink
-													to={`/planetdetail/${planet.result.uid}`}
+													to={`/planetdetail/${planet.result._id}`}
 													className="btn btn-primary">
 													Learn More!
 												</NavLink>
@@ -80,7 +80,7 @@ export const Home = () => {
 											<p className="card-text">Class: {vehicle.result.properties.vehicle_class}</p>
 											<div className="buttons">
 												<NavLink
-													to={`/vehicledetail/${vehicle.result.uid}`}
+													to={`/vehicledetail/${vehicle.result._id}`}
 													className="btn btn-primary">
 													Learn More!
 												</NavLink>
