@@ -106,6 +106,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 						favorites: newFav
 					})
 				}
+				console.log(store.favorites)
 			},
 		}
 	};

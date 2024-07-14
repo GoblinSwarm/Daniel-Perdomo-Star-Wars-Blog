@@ -4,10 +4,8 @@ import { Context } from "../store/appContext";
 import "../../styles/home.css";
 
 export const Home = () => {
-	const { store } = useContext(Context);
+	const { store, actions } = useContext(Context);
 	const { people, vehicles, planets } = store;
-
-	
 
 	return (
 		<div className="container text-start">
@@ -31,7 +29,10 @@ export const Home = () => {
 													className="btn btn-primary">
 													Learn More!
 												</NavLink>
-												<a href="#" className="btn btn-primary"><i className="far fa-heart"></i></a>
+												<button
+													onClick={() => actions.modFavorites(person)}
+													className={store.favorites.includes(person) ? <i class="fas fa-heart"></i> : ""}
+												><i className="far fa-heart"></i></button>
 											</div>
 										</div>
 									</div>
@@ -98,7 +99,7 @@ export const Home = () => {
 			</div>
 			<br />
 			<br />
-		</div>
+		</div >
 	);
 };
 

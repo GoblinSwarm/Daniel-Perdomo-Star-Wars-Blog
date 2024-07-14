@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { isHtmlElement } from "react-router-dom/dist/dom";
+
 
 export const Navbar = () => {
 	const { store } = useContext(Context)
@@ -29,8 +29,9 @@ export const Navbar = () => {
 							{
 								store.favorites.map((item) => {
 									return (
-										<li><a className="dropdown-item" href="#">{item.properties.name}</a>
-											<span><i className="far fa-trash-alt"></i></span>
+										< li className="d-flex px-2" >
+											<a className="dropdown-item" href="#">{item.result.properties.name}</a>
+											<span onClick={() => actions.modFavorites(item)}><i className="far fa-trash-alt"></i></span>
 										</li>
 									)
 								})
@@ -38,8 +39,8 @@ export const Navbar = () => {
 						</ul>
 					</div>
 				</div>
-			</nav>
-		</div>
+			</nav >
+		</div >
 	);
 };
 
