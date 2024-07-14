@@ -61,7 +61,11 @@ export const Home = () => {
 													className="btn btn-primary">
 													Learn More!
 												</NavLink>
-												<a href="#" className="btn btn-primary"><i className="far fa-heart"></i></a>
+												<button
+													onClick={() => actions.modFavorites(planet)}
+													className="btn btn-primary {store.favorites.includes(planet)}">
+													<i className="fas fa-heart"></i>
+												</button>
 											</div>
 										</div>
 									</div>
@@ -88,7 +92,11 @@ export const Home = () => {
 													className="btn btn-primary">
 													Learn More!
 												</NavLink>
-												<a href="#" className="btn btn-primary"><i className="far fa-heart"></i></a>
+												<button
+													onClick={() => actions.modFavorites(vehicle)}
+													className="btn btn-primary {store.favorites.includes(vehicle)}">
+													<i className="fas fa-heart"></i>
+												</button>
 											</div>
 										</div>
 									</div>
